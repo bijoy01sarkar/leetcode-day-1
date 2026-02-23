@@ -1,3 +1,4 @@
+way no. 1: 
 class Solution {
 public:
     char findTheDifference(string s, string t) {
@@ -11,5 +12,21 @@ public:
             sum_t += ch;
         }
         return (char)(sum_t - sum_s);
+    }
+};
+
+way no. 2: 
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        int sum = 0;
+        for(char &ch : t) {
+            sum += ch;
+        }
+
+        for (char &ch : s) {
+            sum -= ch;
+        }
+        return (char)(sum);
     }
 };
